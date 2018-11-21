@@ -28,10 +28,11 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    z-index: 3;
 }
 .burger span {
-    width: 80%;
-    height: 2px;
+    width: 70%;
+    height: 3px;
     background-color: #502628;
 }
 section.fuvi {
@@ -240,6 +241,81 @@ footer {
 .menu img {
     margin: 0 20px;
 }
+
+/* INTEGRATION NAV */
+.nav__hidden {
+    display: none;
+    justify-content: flex-end;
+    position: relative;
+    height: 100%;
+}
+  .nav__hidden a {
+    padding: 30px 30px 0;
+    text-decoration: none;
+    color: black;
+}
+  .nav__hidden a:hover {
+    color: crimson;
+}
+/* NAV RESPONSIVE BIT */
+@media screen and (max-width:1023px) {
+
+    .nav__hidden {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left:-100vw;
+        background: rgb(231, 94, 31);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: .3s all ease-in-out;
+        z-index: 1;
+      }
+      .nav__hidden a {
+      width: 100%;
+      text-align: center;
+      background: rgb(175, 64, 12);
+      padding: 15px 0;
+      border-bottom: 1px solid #502628;
+      }
+      .nav__hidden a:last-child {
+          border: 0;
+      }
+      .nav__hidden a:hover {
+        background-color: #502628;
+        color:white;
+      }
+      .nav__hidden.active {
+        left:0;
+    }
+    .burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      transition: .2s all ease-in-out;
+    }
+    .burger.active {
+      transform: rotate(180deg);
+    }
+    .burger.active .burger__item{
+      background-color:#502628;
+      transition: .2s all ease-in-out;
+    }
+    .burger.active .burger__item:nth-of-type(1) {
+      width: 50%;
+    }
+    .burger.active .burger__item:nth-of-type(2) {
+      width: 80%;
+    }
+    .burger.active .burger__item:nth-of-type(3) {
+      width: 50%;
+    }
+}
+/* FIN INTEGRATION NAV */
+
 @media screen and (min-width: 1024px) {
     .prez {
         height: 677px;
@@ -319,4 +395,5 @@ footer {
     .holder__subb input[type="email"] {
         width: 152px;
     }
+    
 }
