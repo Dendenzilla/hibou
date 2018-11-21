@@ -30,10 +30,11 @@ body {
     align-items: center;
     z-index: 3;
 }
-.burger span {
+.burger__item {
     width: 70%;
     height: 3px;
     background-color: #502628;
+    transition: .2s all ease-in-out;
 }
 section.fuvi {
     height: 404px;
@@ -294,24 +295,19 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      align-items: center;
-      transition: .2s all ease-in-out;
     }
-    .burger.active {
-      transform: rotate(180deg);
-    }
+    
     .burger.active .burger__item{
       background-color:#502628;
-      transition: .2s all ease-in-out;
     }
     .burger.active .burger__item:nth-of-type(1) {
-      width: 50%;
+        transform: translate(0%,260%) rotate(45deg);
     }
     .burger.active .burger__item:nth-of-type(2) {
-      width: 80%;
+        transform: translate(0%,400%);
     }
     .burger.active .burger__item:nth-of-type(3) {
-      width: 50%;
+        transform: translate(0%, -260%) rotate(-45deg);
     }
 }
 /* FIN INTEGRATION NAV */
